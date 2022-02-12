@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-sn_ms^x@z^_x+c-+$mn5#slwv=3$@9k=tq8ctaeyzzogfh4gt&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1''.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -145,3 +145,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+EMAIL_BACKEND = 'django.core.amil.backends.console.EMAILBACKEND'

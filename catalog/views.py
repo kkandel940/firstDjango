@@ -38,12 +38,12 @@ class BookListView(generic.ListView):
     model = Book
     paginate_by = 10
 
-    #def get_context_data(self, **kwargs):
-        # Call the base implementation first to get the context
-        #context = super(BookListView, self).get_context_data(**kwargs)
-        # Create any data and add it to the context
-        #context['some_data'] = 'This is just some data'
-        #return context
+    def get_context_data(self, **kwargs):
+        #Call the base implementation first to get the context
+        context = super(BookListView, self).get_context_data(**kwargs)
+         #Create any data and add it to the context
+        context['some_data'] = 'This is just some data'
+        return context
 
 
 
@@ -51,16 +51,16 @@ class BookListView(generic.ListView):
 class BookDetailView(generic.DetailView):
     model = Book
 
-    #def book_detail_view(request, primary_key):
-        #book = get_object_or_404(Book, pk=primary_key)
-        #return render(request, 'catalog/book_detail.html', context={'book': book})
+    def book_detail_view(request, primary_key):
+        book = get_object_or_404(Book, pk=primary_key)
+        return render(request, 'catalog/book_detail.html', context={'book': book})
 
 class AuthorListView(generic.ListView):
     model = Author
-    #def get_context_data(self,**kwargs):
-        #context = super(AuthorListView, self).get_context_data(**kwargs)
-        #context['some_data'] = 'This is just some data'
-        #return context
+    def get_context_data(self,**kwargs):
+        context = super(AuthorListView, self).get_context_data(**kwargs)
+        context['some_data'] = 'This is just some data'
+        return context
 
 class AuthorDetailView(generic.DetailView):
     model = Author
